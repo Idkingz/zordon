@@ -3,17 +3,16 @@ echo " .-' ,---.,---.,---|,---.,---."
 echo "|    |   ||    |   ||   ||   | says Hi!"
 echo " ---''---''    '---''---''   '"
 
-echo "Zordon is a minimal Ubuntu 24.04+ installations only!"
-echo "Begin installation!"
+echo "Zordon is a minimal Ubuntu 24.04 Installation!"
+echo "Lets Begin!"
 
 apt-get update >/dev/null
 apt-get install curl -y >/dev/null
 apt-get install -y git >/dev/null
 
+echo "Clonning repository..."
 git clone https://github.com/Idkingz/zordon.git ~/.local/share/zordon >/dev/null
-cd ~/.local/share/zordon
-latest_tag=$(git ls-remote --tags --sort=-v:refname https://github.com/Idkingz/zordon.git | head -n 1 | awk -F'/' '{print $3}')
-git clone --branch $latest_tag https://github.com/Idkingz/zordon.git
+echo "Repository cloned with success!"
 
+source ~/.local/share/zordon/scripts/install/vscode.sh
 
-echo "Installation finishing..."
