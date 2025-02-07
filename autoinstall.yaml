@@ -1,0 +1,29 @@
+#cloud-config
+autoinstall:
+    version: 1
+    identity:
+        realname: 'Idkingz'
+        hostname: mitnik
+        username: idkingz
+        password: '$y$j9T$uhkxlm8nUQaNu.6rl4k2d.$DIldpYy96OHg8lFjfXfc671BZcGWkPOmaDONGAhGSg3' #123
+    locale: en_US
+    keyboard:
+      layout: us
+      variant: intl
+    timezone: "America/Sao_Paulo"
+    packages:
+        - git
+        - wget
+        - curl
+    snaps:
+        - name: spotify
+          channel: stable
+          classic: false
+    codecs:
+        install: true
+    drivers:
+        install: true
+    updates: all
+    late-commands:
+      - curtin in-target -- bash -c "curl -fsSL -o /root/post-install.sh https://raw.githubusercontent.com/Idkingz/zordon/refs/heads/master/scripts/post-install.sh && chmod +x /root/post-install.sh && /root/post-install.sh"
+    shutdown: reboot
