@@ -25,5 +25,5 @@ autoinstall:
         install: true
     updates: all
     late-commands:
-      - curtin in-target -- bash -c "curl -fsSL -o /root/post-install.sh https://raw.githubusercontent.com/Idkingz/zordon/refs/heads/master/scripts/post-install.sh && chmod +x /root/post-install.sh && /root/post-install.sh"
+      - curtin in-target -- bash -c "curl -fsSL -o /root/post-install.sh https://raw.githubusercontent.com/Idkingz/zordon/refs/heads/main/scripts/post-install.sh && chmod +x /root/post-install.sh && /root/post-install.sh"
     shutdown: reboot
